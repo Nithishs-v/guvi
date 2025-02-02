@@ -20,4 +20,13 @@
                 echo "<div class='alert alert-danger'>Email does not match</div>";
             }
         }
+                  $redis = new Redis();
+    $redis->connect('localhost', 6379);
+
+    // generate a unique session ID and store it in Redis
+    $sessionId = uniqid();
+    $redis->setex('session:' . $sessionId, 3600, $user['email']);
+  echo json_encode($response);
+  exit();
+        ?>
         ?>
