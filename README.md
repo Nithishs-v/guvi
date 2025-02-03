@@ -1,4 +1,4 @@
-![profiledata](https://github.com/user-attachments/assets/2f389a6d-7146-4c5e-88cc-2c7b193d5f43)# Guvi Internship Task
+# Guvi Internship Task
 
 it is a internship task to create a simple login,register and user profile.
 ## Tech Stack
