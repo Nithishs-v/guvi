@@ -13,6 +13,7 @@ it is a internship task to create a simple login,register and user profile.
 ![login](https://github.com/user-attachments/assets/00010fc5-01e9-4a3e-b1b7-ceda3a07506e)
 ![register](https://github.com/user-attachments/assets/34c40738-be4b-47d9-a208-fe3e727236bf)
 ![profile](https://github.com/user-attachments/assets/46fefdd2-a7a1-4e09-8361-9f08ee35b25f)
+
 ![sqldb](https://github.com/user-attachments/assets/5a48efeb-1d2e-45e5-85dc-c65d10beb7be)
 ![mongodb](https://github.com/user-attachments/assets/b5c7e1d6-38c2-418d-8471-7595b20c4398)
 ## Installation
