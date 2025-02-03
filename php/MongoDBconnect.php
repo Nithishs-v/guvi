@@ -26,4 +26,15 @@ if (isset($_POST['username'], $_POST['phoneNumber'], $_POST['age'], $_POST['dob'
 } else {
     echo "Required form fields are missing!";
 }
+$redis = new Redis();
+    $redis->connect('localhost', 6379);
+
+    // retrieve the user ID from Redis using the session ID
+    $userId = $redis->get('session:' . $sessionId);
+
+    header('Content-type: application/json');
+    echo json_encode($profile);
+    break;
+}
+
 ?>
