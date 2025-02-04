@@ -1,9 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION["user"])) {
-   header("Location: index.php");
-}
-?>
+
 <?php
         if (isset($_POST["submit"])) {
            $fullName = $_POST["full_name"];
