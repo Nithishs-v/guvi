@@ -13,13 +13,13 @@ if (isset($_POST['username'], $_POST['phoneNumber'], $_POST['age'], $_POST['dob'
     
     $email = $_POST['email'];
     
-    // Check if the user already exists based on email
+    // Check if the user already exists based on email id
     $existingUser = $userCollection->findOne(['email' => $email]);
 
     if ($existingUser) {
-        // Update user information if email exists
+        // Update user information if emailid is exists
         $userCollection->updateOne(
-            ['email' => $email], // Filter by email
+            ['email' => $email], // Filter by emailid
             ['$set' => [
                 'username' => $_POST['username'],
                 'phoneNumber' => $_POST['phoneNumber'],
