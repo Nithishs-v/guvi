@@ -13,11 +13,11 @@
                     $_SESSION["user"] = "yes";
                     header("Location: ../profile.html");
                     die();
-                }else{
-                    echo "<div class='alert alert-danger'>Password does not match</div>";
-                }
+               }else{
+                   echo "<div class='alert alert-danger'>Password does not match</div>";
+               }
             }else{
-                echo "<div class='alert alert-danger'>Email does not match</div>";
+               echo "<div class='alert alert-danger'>Email does not match</div>";
             }
         }
                   $redis = new Redis();
