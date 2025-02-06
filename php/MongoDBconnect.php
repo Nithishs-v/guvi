@@ -17,9 +17,9 @@ if (isset($_POST['username'], $_POST['phoneNumber'], $_POST['age'], $_POST['dob'
     $existingUser = $userCollection->findOne(['email' => $email]);
 
     if ($existingUser) {
-        // Update user information if emailid is exists
+        // Update user information if email exists
         $userCollection->updateOne(
-            ['email' => $email], // Filter by emailid
+            ['email' => $email], // Filter by email
             ['$set' => [
                 'username' => $_POST['username'],
                 'phoneNumber' => $_POST['phoneNumber'],
@@ -27,7 +27,7 @@ if (isset($_POST['username'], $_POST['phoneNumber'], $_POST['age'], $_POST['dob'
                 'dob' => $_POST['dob']
             ]]
         );
-        echo "<h3>Profile updated successfully!</h3>";
+        echo "Profile updated successfully!";
     } else {
         // Insert new user if email doesn't exist
         $userCollection->insertOne([
@@ -37,37 +37,10 @@ if (isset($_POST['username'], $_POST['phoneNumber'], $_POST['age'], $_POST['dob'
             'dob' => $_POST['dob'],
             'email' => $_POST['email'],
         ]);
-        echo "<h3>Successfully registered! Thank you.</h3>";
+        echo "Successfully registered! Thank you.";
     }
-    
-    // Fetch and display all users
-    $users = $userCollection->find();
-
-    echo "<h3>Registered Users:</h3>";
-    echo "<table border='1' cellpadding='10'>";
-    echo "<tr>
-            <th>Username</th>
-            <th>Phone Number</th>
-            <th>Age</th>
-            <th>Date of Birth</th>
-            <th>Email</th>
-          </tr>";
-
-    foreach ($users as $user) {
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($user['username']) . "</td>";
-        echo "<td>" . htmlspecialchars($user['phoneNumber']) . "</td>";
-        echo "<td>" . htmlspecialchars($user['age']) . "</td>";
-        echo "<td>" . htmlspecialchars($user['dob']) . "</td>";
-        echo "<td>" . htmlspecialchars($user['email']) . "</td>";
-        echo "</tr>";
-    }
-
-    echo "</table>";
-
 } else {
     echo "Required form fields are missing!";
 }
 
 ?>
-
